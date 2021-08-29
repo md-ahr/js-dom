@@ -30,6 +30,16 @@
 // TODO: Traversing DOM
 //////////////////////////////////
 
+/*
+* textContent vs innerText vs innerHTML:
+*
+* textContent -> all text contained by an element and all its children that are for formatting purposes only
+*
+* innerText -> returns all text contained by an element and all its child elements
+*
+* innerHTML -> returns all text, including html tags, that is contained by an element
+*/
+
 // ! Get Element By Id
 // let headerElementId = document.getElementById('header');
 // headerElementId.textContent = 'TO-DO APPS';
@@ -94,3 +104,69 @@
 // const childrenTwo = document.querySelector('.item').nextElementSibling;
 // const previousChildren = childrenTwo.previousElementSibling; // Immediate previous sibling
 // console.log(previousChildren);
+
+
+
+//////////////////////////////
+// TODO: DOM Manipulation
+//////////////////////////////
+
+// ! Create Element
+// const divElement = document.createElement('div');
+// divElement.className = 'container';
+// divElement.setAttribute('id', 'red');
+// divElement.setAttribute('title', 'red div');
+// const container = document.querySelector('.todo-list');
+// const h2Element = container.querySelector('h2');
+// container.insertBefore(divElement, h2Element); // insertBefore -> insert element before the selector element
+
+/*
+* appendChild vs append:
+*
+* appendChild -> 1) support only html element
+*                2) return the appended element
+*                3) only single element can be appended
+*
+* append -> 1) support text & html element
+*           2) return undefined
+*           3) multiple element can be appended to
+*/
+// container.appendChild(divElement);
+// container.append(divElement);
+
+/*
+* insertAdjacentHTML() -> Inserts a text as HTML, into a specified position
+* afterbegin - After the beginning of the element (as the first child)
+* afterend - After the element
+* beforebegin - Before the element
+* beforeend - Before the end of the element (as the last child)
+*/
+// container.insertAdjacentHTML('afterbegin', '<div id="adjacent">adjacent</div>');
+
+
+
+/////////////////////////
+// TODO: DOM Events
+////////////////////////
+
+// ! Mouse Event Listeners :: click, dblclick, mousedown, mouseup, mouseenter, mouseleave, mouseover, mouseout
+// ! Input Event Listeners :: keydown, keyup, keypress, focus, blur, copy, cut, paste, input, submit
+
+/*
+* mouseenter (recommended) vs mouseover, mouseleave (recommended) vs mouseout:
+*
+* mouseenter -> triggers when the mouse enters the element on which it is set
+*
+* mouseover -> triggers when the mouse enters the element or any of its children
+*
+* mouseleave -> triggers when the mouse leaves the element on which it is set
+*
+* mouseout -> triggers when the mouse leaves the element or any of its children
+*/
+
+// !!! Event -> event.target, event.preventDefault(), event.stopPropagation(), event.contextmenu()
+
+// const headerElem = document.querySelector('#header');
+// headerElem.addEventListener('click', function (event) {
+//     console.log(event);
+// });
